@@ -1,3 +1,4 @@
+var gtfs = require('../');
 
 /*
  * GET the index page.
@@ -22,12 +23,27 @@ exports.route = function(req, res){
 	// 		}
 	// 	})
 	// });
-	res.render('route', {
-		title : req.params.route_id + ' - last ride in',
-		locals : {
-			stops : ['stop1', 'stop2', 'stop3']
+	
+	var agency_id = req.params.agency_id
+      , route_id = req.params.route_id;
+      
+    //currently getStopsByRoute does not get both directions - for now, direction_id hardcoded to 1 until fixed  
+	gtfs.getStopsByRoute(agency_id, route_id, 1, function(e, data){		
+		//data is an array of json objects
+		
+		var stopsArray = [];
+		for (var i = 0; i < data.length; i++) {
+			stopsArray[i] = data[i].stop_name; 
 		}
-	})
+		
+		res.render('route', {
+			title : req.params.route_id + ' - last ride in',
+			locals : {
+				stops : stopsArray
+			}
+		})
+
+	});
 };
 
 // exports.stop = function(req, res){
