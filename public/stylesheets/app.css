@@ -2,8 +2,7 @@
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: index
 */
 
 
@@ -11,17 +10,15 @@
    Shared Styles
 ----------------------------------------- */
 
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
+html, body {
+	background-image : url('../images/bg.png');
+	font-family : helvetica, arial;
+}
 
 /* -----------------------------------------
-   Page Name 2
+   index
 ----------------------------------------- */
 
-
+.row {
+	padding-top : 10%;
+}
