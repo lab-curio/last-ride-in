@@ -30,16 +30,13 @@ exports.route = function(req, res){
     //currently getStopsByRoute does not get both directions - for now, direction_id hardcoded to 1 until fixed  
 	gtfs.getStopsByRoute(agency_id, route_id, 1, function(e, data){		
 		//data is an array of json objects
-		
-		var stopsArray = [];
-		for (var i = 0; i < data.length; i++) {
-			stopsArray[i] = data[i].stop_name; 
-		}
-		
+		console.log(data);
 		res.render('route', {
 			title : req.params.route_id + ' - last ride in',
 			locals : {
-				stops : stopsArray
+				stops : data,
+				'route_id' : route_id,
+				'agency_id' : agency_id
 			}
 		})
 

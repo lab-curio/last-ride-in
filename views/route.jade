@@ -5,5 +5,5 @@
 
     for stop in stops
         .row
-            | #{stop}
-     
+            a(href="/routes/#{agency_id}/#{route_id}#{stop.stop_id}")
+                | #{stop.stop_name}
