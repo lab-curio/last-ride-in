@@ -10,15 +10,32 @@
    Shared Styles
 ----------------------------------------- */
 
+@font-face {
+    font-family: 'QuicksandLightRegular';
+    src: url('fonts/quicksand_light-webfont.eot');
+    src: url('fonts/quicksand_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/quicksand_light-webfont.woff') format('woff'),
+         url('fonts/quicksand_light.otf') format('otf'),
+         url('fonts/quicksand_light-webfont.ttf') format('truetype'),
+         url('fonts/quicksand_light-webfont.svg#QuicksandLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html, body {
-	background-image : url('../images/bg.png');
-	font-family : helvetica, arial;
+	background-image : url('../images/bg2.png');
+}
+
+.row {
+	padding-top : 20px;
 }
 
 /* -----------------------------------------
    index
 ----------------------------------------- */
 
-.row {
-	padding-top : 10%;
+#title {
+	padding-bottom : 20px;
+	font-family : 'QuicksandLightRegular';
 }

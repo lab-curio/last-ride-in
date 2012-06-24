@@ -1,6 +1,27 @@
-!!!
-html
+!!! 5
+html(lang='en')
+  
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    //
+       Set the viewport width to device width for mobile 
+    meta(name='viewport', content='width=device-width')
+    title last ride in
+    //
+       Included CSS Files 
+    link(rel='stylesheet', href='/stylesheets/foundation.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    //if lt IE 9
+      link(rel='stylesheet', href='/stylesheets/ie.css')
+    //
+       IE Fix for HTML5 Tags 
+    //if lt IE 9
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+      
   body!= body
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/modernizr.foundation.js')
+    script(src='/javascripts/foundation.js')
+    script(src='/javascripts/app.js')
+    
