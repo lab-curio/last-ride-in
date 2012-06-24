@@ -1,0 +1,7 @@
+/* Last Ride In was made by Ethan Lo and Matthew Conlen in Brooklyn, NY */
+/* lastride.in */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Zurb Foundation, jQuery, node.js, express
