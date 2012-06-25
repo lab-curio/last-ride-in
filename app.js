@@ -28,6 +28,7 @@ app.configure('production', function(){
 });
 
 
+app.get('/map', routes.map);
 app.get('/route/:agency_id?', routes.index);
 app.get('/:agency_id?', routes.index);
 app.get('/route/:agency_id/:route_id', routes.route);

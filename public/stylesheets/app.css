@@ -3,6 +3,7 @@
 -----------------------------------------------------
 :: Shared Styles
 :: index
+:: route
 */
 
 
@@ -20,7 +21,18 @@
          url('fonts/quicksand_light-webfont.svg#QuicksandLightRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'CodeProRegular';
+    src: url('fonts/code_pro-webfont.eot');
+    src: url('fonts/code_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/code_pro-webfont.woff') format('woff'),
+         url('fonts/code_pro-webfont.otf') format('otf'),
+         url('fonts/code_pro-webfont.ttf') format('truetype'),
+         url('fonts/code_pro-webfont.svg#CodeProDemoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html, body {
@@ -38,4 +50,39 @@ html, body {
 #title {
 	padding-bottom : 20px;
 	font-family : 'QuicksandLightRegular';
+}
+
+#map {
+	max-width : 75px;
+	position : absolute;
+	top : -15px;
+}
+
+/* -----------------------------------------
+   route
+----------------------------------------- */
+
+.stop {
+	border-top : 1px black solid;
+	padding: 30px 0px 10px 0px;
+    font-family: 'CodeProRegular';
+	font-size : 20px;
+	color : #333;
+}
+
+#stopDiv {
+	border-bottom : 1px black solid;
+	margin-bottom: 30px;
+	padding-bottom : 20px;
+}
+
+/* -----------------------------------------
+   map
+----------------------------------------- */
+
+.mapDiv {
+	padding : 0px 0px 0px 0px ! important;
+	margin : 0px 0px 0px 0px ! important;
+	line-height : 0;
+	vertical-align : bottom;
 }

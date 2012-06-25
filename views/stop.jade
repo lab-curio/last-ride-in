@@ -6,9 +6,6 @@
         .two.columns.phone-one
             img(src="/images/#{route_id}.svg"))
 
-    #stopDiv
-        for stop in stops
-            .row
-                a(href="/route/#{agency_id}/#{route_id}/#{stop.stop_id}")
-                    div.stop
-                        | #{stop.stop_name}
+    for time in times
+        .row
+            | #{time}

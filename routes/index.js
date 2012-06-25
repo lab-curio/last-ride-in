@@ -30,7 +30,7 @@ exports.route = function(req, res){
 	});
 };
 
- exports.stop = function(req, res){
+exports.stop = function(req, res){
 	var agency_id = req.params.agency_id
       , route_id = req.params.route_id
       , stop_id = req.params.stop_id
@@ -55,9 +55,14 @@ exports.route = function(req, res){
  		res.render('stop', {
  			title : req.params.route_id + ' - ' + req.params.stop_id,
  			locals : {
- 				times : data
+ 				times : northData,
+				'route_id' : route_id
  			}
  		})
 		});
- 	});
- };
+	});
+};
+
+exports.map = function(req, res) {
+	res.render('map', { layout: 'map' });
+};
