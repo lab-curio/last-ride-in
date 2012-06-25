@@ -50,12 +50,11 @@ html, body {
 #title {
 	padding-bottom : 20px;
 	font-family : 'QuicksandLightRegular';
+	font-weight : normal;
 }
 
 #map {
 	max-width : 75px;
-	position : absolute;
-	top : -15px;
 }
 
 /* -----------------------------------------
