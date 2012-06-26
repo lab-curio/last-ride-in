@@ -9,6 +9,13 @@
         .two.columns.phone-one
             img(src="/images/#{route_id}.svg"))
             
+    - var now = new Date()
     for time in times
-        .row
-            | #{time}
+        - time = time.substr(0,5)
+        - var hour = parseInt(time.substr(0,2))
+        - if(hour > 23) hour -= 24
+        - var minute = parseInt(time.substr(3,2))
+        - if(now.getHours() < hour && now.getMinutes() < minute)
+            .row.stopRow
+                .stop
+                    | #{hour}:#{minute}
