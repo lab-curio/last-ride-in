@@ -50,7 +50,7 @@ exports.stop = function(req, res){
 	 
 	gtfs.getTimesByStop(agency_id, route_id, north_stop_id, 0, function(e, northData) {
 		gtfs.getTimesByStop(agency_id, route_id, south_stop_id, 1, function(e, southData) {
-		console.log(northData + southData);
+		// console.log(northData + southData);
 		
  		res.render('stop', {
  			title : req.params.route_id + ' - ' + req.params.stop_id,

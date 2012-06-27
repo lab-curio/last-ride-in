@@ -8,14 +8,18 @@
                 img(src="/images/map2.svg")#map
         .two.columns.phone-one
             img(src="/images/#{route_id}.svg"))
-            
-    - var now = new Date()
+    
+    
+    - var now = new Date().toLocaleTimeString()
+    - var nowHour = parseInt(now.substr(0,2))
+    - var nowMinute = parseInt(now.substr(3,2))
     for time in times
         - time = time.substr(0,5)
+        - console.log(time)
         - var hour = parseInt(time.substr(0,2))
-        - if(hour > 23) hour -= 24
         - var minute = parseInt(time.substr(3,2))
-        - if(now.getHours() < hour && now.getMinutes() < minute)
+        - if(nowHour < hour || (nowHour==hour && nowMinute < minute))
+            - if(hour > 23) hour -= 24
             .row.stopRow
                 .stop
-                    | #{hour}:#{minute}
+                    | #{time}
