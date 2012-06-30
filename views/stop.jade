@@ -7,19 +7,43 @@
             a(href="/map")
                 img(src="/images/map2.svg")#map
         .two.columns.phone-one
-            img(src="/images/#{route_id}.svg"))
+            a(href="/route/#{agency_id}/#{route_id}")
+                img(src="/images/#{route_id}.svg"))
     
     
+    .row
+        .six.columns.phone-two
+            a(href="/")
+                // | #{northHeading}
+        .six.columns.phone-two
+            a(href="/")
+                // | #{southHeading}
+
     - var now = new Date().toLocaleTimeString()
     - var nowHour = parseInt(now.substr(0,2))
     - var nowMinute = parseInt(now.substr(3,2))
+    - var dispHour = (nowHour > 12) ? nowHour-12 : nowHour
+    .row
+        .currentTime
+            | Current time : #{dispHour}:#{nowMinute}
+    .row
+        .upcomingTimes
+            | Upcoming Trains:
+    
     for time in times
         - time = time.substr(0,5)
         - console.log(time)
         - var hour = parseInt(time.substr(0,2))
         - var minute = parseInt(time.substr(3,2))
+        - var dispMinute = time.substr(3,2)
         - if(nowHour < hour || (nowHour==hour && nowMinute < minute))
-            - if(hour > 23) hour -= 24
+            - if(hour > 24) hour -= 24
             .row.stopRow
-                .stop
-                    | #{time}
+                - if (nowHour == hour && minute - nowMinute < 5)
+                    - if(hour > 12) hour -= 12
+                    .stop.soon
+                        | #{hour}:#{dispMinute}
+                - else
+                    - if(hour > 12) hour -= 12
+                    .stop
+                        | #{hour}:#{dispMinute}
