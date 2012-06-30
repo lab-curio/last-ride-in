@@ -101,12 +101,12 @@ function showSouth() {
 	$(".southHeading").removeClass("unselected");
 	$(".northHeading").addClass("unselected");
 	$(".northTimes").hide();
-	$(".southTimes").hide();
+	$(".southTimes").show();
 }
 
 function showNorth() {
 	$(".northHeading").removeClass("unselected");
 	$(".southHeading").addClass("unselected");
 	$(".southTimes").hide();
-	$(".northTimes").hide();
+	$(".northTimes").show();
 }
