@@ -46,21 +46,26 @@ exports.stop = function(req, res){
 	} else {
 		north_stop_id = stop_id.substring(0,stop_id.length-1) + "N";
 		south_stop_id = stop_id;
-	}
+	}	 
 	 
 	gtfs.getTimesByStop(agency_id, route_id, north_stop_id, 0, function(e, northData) {
 		gtfs.getTimesByStop(agency_id, route_id, south_stop_id, 1, function(e, southData) {
-		// console.log(northData + southData);
-		
- 		res.render('stop', {
- 			title : req.params.route_id + ' - ' + req.params.stop_id,
- 			locals : {
- 				times : northData,
-				'route_id' : route_id
- 			}
- 		})
+			gtfs.findBothDirectionNames(agency_id, route_id, function(directionsObj) {
+				// console.log(northData + southData);
+				console.log(JSON.stringify(directionsObj));
+				
+		 		res.render('stop', {
+		 			title : req.params.route_id + ' - ' + req.params.stop_id,
+		 			locals : {
+		 				times : northData,
+						'route_id' : route_id
+		 			}
+		 		})
+		 	});
 		});
 	});
+
+
 };
 
 exports.map = function(req, res) {
