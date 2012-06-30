@@ -19,13 +19,16 @@
             a(href="/")
                 // | #{southHeading}
 
-    - var now = new Date().toLocaleTimeString()
-    - var nowHour = parseInt(now.substr(0,2))
-    - var nowMinute = parseInt(now.substr(3,2))
-    - var dispHour = (nowHour > 12) ? nowHour-12 : nowHour
+    - var d = new Date()
+    - var utc = d.getTime() + (d.getTimezoneOffset() * 60000)
+    - var now = new Date(utc + (3600000*(-4)))
+    - var nowHour = now.getHours()
+    - var nowMinute = now.getMinutes()
+    - var nowDispMinute = (nowMinute < 10) ? '0' + nowMinute : nowMinute
+    - var nowDispHour = (nowHour > 12) ? nowHour-12 : nowHour
     .row
         .currentTime
-            | Current time : #{dispHour}:#{nowMinute}
+            | Current time : #{nowDispHour}:#{nowDispMinute}
     .row
         .upcomingTimes
             | Upcoming Trains:

@@ -57,27 +57,32 @@ html, body {
 	max-width : 75px;
 }
 
+.subway-line-icon {
+  width: auto;
+  height: auto;
+}
+
 /* -----------------------------------------
    route
 ----------------------------------------- */
 
 .stop {
 	border-top : 1px black solid;
-	padding: 30px 0px 10px 0px;
+	padding: 30px 0 10px 0;
     font-family: 'CodeProRegular';
 	font-size : 20px;
 	color : #333;
 }
 
 .currentTime {
-  padding: 30px 0px 0px 0px;
+  padding: 30px 0 0 0;
   font-family: 'CodeProRegular';
   font-size : 20px;
   color : #333;
 }
 
 .upcomingTimes {
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0 10px 0;
   font-family: 'CodeProRegular';
   font-size : 20px;
   color : #333;
