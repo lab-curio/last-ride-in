@@ -95,6 +95,11 @@ html, body {
   display: none;
 }
 
+.noTrains {
+  font-family: 'CodeProRegular';
+  font-size : 20px;
+}
+
 /* -----------------------------------------
    stop
 ----------------------------------------- */
@@ -113,14 +118,30 @@ html, body {
 	margin-bottom : 30px;
 }
 
+.stopRow:first-child {
+  padding-top: 20px;
+}
+
 .heading {
   margin-top: 20px;
-  border-top: 1px black solid;
-  border-bottom : 1px black solid;
+  /*border-top: 1px black solid;*/
+  /*border-bottom : 1px black solid;*/
   padding: 20px 0 20px 0;
   font-family: 'CodeProRegular';
-  font-size : 26px;
+  font-size : 28px;
   color : #333;
+  line-height: 32px;
+}
+
+.heading p {
+  margin-top: 20px;
+  /*border-top: 1px black solid;*/
+  /*border-bottom : 1px black solid;*/
+  padding: 20px 0 20px 0;
+  font-family: 'CodeProRegular';
+  font-size : 28px;
+  color : #333;
+  line-height: 32px;
 }
 
 .unselected {
