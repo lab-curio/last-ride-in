@@ -47,8 +47,11 @@ exports.stop = function(req, res){
         south_stop_id = stop_id;
     }
      
-    gtfs.getTimesByStop(agency_id, route_id, north_stop_id, 0, function(e, northData) {
-        gtfs.getTimesByStop(agency_id, route_id, south_stop_id, 1, function(e, southData) {
+    //hhow many times you want to get back
+    var numOfTimes = 5;
+    
+    gtfs.getTimesByStop(agency_id, route_id, north_stop_id, numOfTimes, 0, function(e, northData) {
+        gtfs.getTimesByStop(agency_id, route_id, south_stop_id, numOfTimes, 1, function(e, southData) {
             gtfs.findBothDirectionNames(agency_id, route_id, function(directionsObj) {
                 // console.log(northData + southData);
                 console.log(JSON.stringify(directionsObj));
