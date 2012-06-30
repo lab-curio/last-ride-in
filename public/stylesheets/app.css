@@ -113,6 +113,36 @@ html, body {
 	margin-bottom : 30px;
 }
 
+.heading {
+  margin-top: 20px;
+  border-top: 1px black solid;
+  border-bottom : 1px black solid;
+  padding: 20px 0 20px 0;
+  font-family: 'CodeProRegular';
+  font-size : 26px;
+  color : #333;
+}
+
+.unselected {
+  opacity: .4;
+}
+
+.headingName {
+  color : black;
+}
+
+.northHeading {
+  margin: 0 15px 0 0;
+}
+
+.southHeading {
+  margin: 0 0 0 15px;
+}
+
+.arrow {
+  max-width: 20px;
+  float : center;
+}
 /* -----------------------------------------
    map
 ----------------------------------------- */

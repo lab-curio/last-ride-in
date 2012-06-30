@@ -11,13 +11,15 @@
                 img(src="/images/#{route_id}.svg"))
     
     
-    .row
-        .six.columns.phone-one
-            a(href="/")
-                 | #{northHeading}
-        .six.columns.phone-two
-            a(href="/")
-                 | #{southHeading}
+    .row.heading
+        a(href="javascript:showNorth();")
+            .six.columns.phone-two
+                .headingName.northHeading
+                    | #{northHeading}
+        a(href="javascript:showSouth();")
+            .six.columns.phone-two
+                .headingName.unselected.southHeading
+                    | #{southHeading}
 
     - var d = new Date()
     - var utc = d.getTime() + (d.getTimezoneOffset() * 60000)
@@ -26,6 +28,7 @@
     - var nowMinute = now.getMinutes()
     - var nowDispMinute = (nowMinute < 10) ? '0' + nowMinute : nowMinute
     - var nowDispHour = (nowHour > 12) ? nowHour-12 : nowHour
+    - nowDispHour = (nowHour == 0) ? nowDispHour + 12 : nowHour
     .row
         .currentTime
             | Current time : #{nowDispHour}:#{nowDispMinute}
@@ -34,40 +37,42 @@
             | Upcoming Trains:
     
     .northTimes
-        for time in northTimes
-            - var time = time.substr(0,5)
-            - console.log(time)
-            - var hour = parseInt(time.substr(0,2))
-            - var minute = parseInt(time.substr(3,2))
-            - var dispMinute = time.substr(3,2)
-            - if(nowHour < hour || (nowHour==hour && nowMinute < minute))
-                - if(hour > 24) hour -= 24
-                .row.stopRow
-                    - if (nowHour == hour && minute - nowMinute < 5)
-                        - if(hour > 12) hour -= 12
-                        .stop.soon
-                            | #{hour}:#{dispMinute}
-                    - else
-                        - if(hour > 12) hour -= 12
-                        .stop
-                            | #{hour}:#{dispMinute}
+        if (northTimes.length > 0)
+            for time in northTimes
+                - var time = time.substr(0,5)
+                - console.log(time)
+                - var hour = parseInt(time.substr(0,2))
+                - var minute = parseInt(time.substr(3,2))
+                - var dispMinute = time.substr(3,2)
+                - if(nowHour < nowHour || (nowHour==hour && nowMinute < minute))
+                    - if(hour > 24) hour -= 24
+                    .row.stopRow
+                        - if (nowHour == hour && minute - nowMinute < 5)
+                            - if(hour > 12) hour -= 12
+                            .stop.soon
+                                | #{hour}:#{dispMinute}
+                        - else
+                            - if(hour > 12) hour -= 12
+                            .stop
+                                | #{hour}:#{dispMinute}
 
     .southTimes
-        for time in southTimes
-            - var time = time.substr(0,5)
-            - console.log(time)
-            - var hour = parseInt(time.substr(0,2))
-            - var minute = parseInt(time.substr(3,2))
-            - var dispMinute = time.substr(3,2)
-            - if(nowHour < hour || (nowHour==hour && nowMinute < minute))
-                - if(hour > 24) hour -= 24
-                .row.stopRow
-                    - if (nowHour == hour && minute - nowMinute < 5)
-                        - if(hour > 12) hour -= 12
-                        .stop.soon
-                            | #{hour}:#{dispMinute}
-                    - else
-                        - if(hour > 12) hour -= 12
-                        .stop
-                            | #{hour}:#{dispMinute}
+        if (southTimes.length > 0)
+            for time in southTimes
+                - var time = time.substr(0,5)
+                - console.log(time)
+                - var hour = parseInt(time.substr(0,2))
+                - var minute = parseInt(time.substr(3,2))
+                - var dispMinute = time.substr(3,2)
+                - if(nowHour < hour || (nowHour==hour && nowMinute < minute))
+                    - if(hour > 24) hour -= 24
+                    .row.stopRow
+                        - if (nowHour == hour && minute - nowMinute < 5)
+                            - if(hour > 12) hour -= 12
+                            .stop.soon
+                                | #{hour}:#{dispMinute}
+                        - else
+                            - if(hour > 12) hour -= 12
+                            .stop
+                                | #{hour}:#{dispMinute}
 

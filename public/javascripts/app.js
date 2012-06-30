@@ -96,3 +96,17 @@ jQuery(document).ready(function ($) {
 	/* Gives elements with a class of 'disabled' a return: false; */
   
 });
+
+function showSouth() {
+	$(".southHeading").removeClass("unselected");
+	$(".northHeading").addClass("unselected");
+	$(".northTimes").hide();
+	$(".southTimes").hide();
+}
+
+function showNorth() {
+	$(".northHeading").removeClass("unselected");
+	$(".southHeading").addClass("unselected");
+	$(".southTimes").hide();
+	$(".northTimes").hide();
+}
