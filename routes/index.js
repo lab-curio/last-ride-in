@@ -59,7 +59,10 @@ exports.stop = function(req, res){
                 res.render('stop', {
                     title : req.params.route_id + ' - ' + req.params.stop_id,
                     locals : {
-                        times : northData,
+                        northHeading : directionsObj.northData,
+                        southHeading : directionsObj.southData,
+                        northTimes : northData,
+                        southTimes : southData,
                         route_id : route_id,
                         agency_id : agency_id
                     }
