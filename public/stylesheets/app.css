@@ -118,10 +118,6 @@ html, body {
 	margin-bottom : 30px;
 }
 
-.stopRow:first-child {
-  padding-top: 20px;
-}
-
 .heading {
   margin-top: 20px;
   /*border-top: 1px black solid;*/
