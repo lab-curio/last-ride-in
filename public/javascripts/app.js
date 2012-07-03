@@ -1,6 +1,13 @@
 /* Foundation v2.2.1 http://foundation.zurb.com */
 jQuery(document).ready(function ($) {
 
+
+	$(".favstar").each(function() {
+		$(this).onClick(function () {
+		alert("holy shit!");
+		});
+	});
+
 	/* Use this js doc for all application specific JS */
 
 	/* TABS --------------------------------- */

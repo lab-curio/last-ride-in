@@ -12,19 +12,17 @@
     
     
     .row.heading
-        a(href="javascript:showNorth();")
-            .six.columns.phone-two
+        .six.columns.phone-two.northColumns
+            a(href="javascript:showNorth();")
                 .headingName.northHeading
                     p
-                        | #{northHeading}
-        a(href="javascript:showSouth();")
-            .six.columns.phone-two
+                        | #{northHeading} (N)
+        .six.columns.phone-two.southColumns
+            a(href="javascript:showSouth();")
                 .headingName.unselected.southHeading
-                    p(align="right").hide-on-phones
-                        | #{southHeading}
-                    p.show-on-phones
-                        | #{southHeading}
-
+                    p(align="right")
+                        | #{southHeading} (S)
+                        
 
     - var d = new Date()
     - var utc = d.getTime() + (d.getTimezoneOffset() * 60000)
@@ -33,13 +31,20 @@
     - var nowMinute = now.getMinutes()
     - var nowDispMinute = (nowMinute < 10) ? '0' + nowMinute : nowMinute
     - var nowDispHour = (nowHour > 12) ? nowHour-12 : nowHour
-    - nowDispHour = (nowHour == 0) ? nowDispHour + 12 : nowHour
+    - nowDispHour = (nowHour == 0) ? nowDispHour + 12 : nowDispHour
     .row
-        .currentTime
-            | Current time : #{nowDispHour}:#{nowDispMinute}
-    .row
-        .upcomingTimes
-            | Upcoming Trains:
+        .six.columns.phone-three
+            .row
+                .currentTime
+                    | Current time : #{nowDispHour}:#{nowDispMinute}
+            .row
+                .upcomingTimes
+                    | Upcoming Trains:
+
+        .one.columns.phone-one.favstar
+            .row
+                div
+                    | ahbjkal;jkal;
     
     .northTimes
         if (northTimes)

@@ -75,14 +75,14 @@ html, body {
 }
 
 .currentTime {
-  padding: 30px 0 0 0;
+  padding: 10px 0 0 0;
   font-family: 'CodeProRegular';
   font-size : 20px;
   color : #333;
 }
 
 .upcomingTimes {
-  padding: 10px 0 10px 0;
+  padding: 0 0 0 0;
   font-family: 'CodeProRegular';
   font-size : 20px;
   color : #333;
@@ -118,22 +118,11 @@ html, body {
 	margin-bottom : 30px;
 }
 
-.heading {
-  margin-top: 20px;
-  /*border-top: 1px black solid;*/
-  /*border-bottom : 1px black solid;*/
-  padding: 20px 0 20px 0;
-  font-family: 'CodeProRegular';
-  font-size : 28px;
-  color : #333;
-  line-height: 32px;
-}
-
 .heading p {
-  margin-top: 20px;
+  margin-top: 15px;
   /*border-top: 1px black solid;*/
   /*border-bottom : 1px black solid;*/
-  padding: 20px 0 20px 0;
+  padding: 0 0 20px 0;
   font-family: 'CodeProRegular';
   font-size : 28px;
   color : #333;
@@ -149,17 +138,19 @@ html, body {
 }
 
 .northHeading {
-  margin: 0 15px 0 0;
+  margin: 0 0 0 0;
+  padding-right: 5px;
 }
 
 .southHeading {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 0;
+  padding-left: 5px;
 }
 
-.arrow {
-  max-width: 20px;
-  float : center;
+.northColumns {
+  border-right: solid black 1px;
 }
+
 /* -----------------------------------------
    map
 ----------------------------------------- */
