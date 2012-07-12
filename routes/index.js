@@ -75,3 +75,11 @@ exports.stop = function(req, res){
 exports.map = function(req, res) {
     res.render('map', { layout: 'map' });
 };
+
+exports.nearbyStops = function(req, res) {
+    var lat = req.params.lat
+      , lon = req.params.lon;
+    gtfs.getClosestStops(lat, lon, 10, function(e, data){
+      res.send( data || {error: 'No stops found'});
+    });
+};

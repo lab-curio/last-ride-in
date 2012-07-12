@@ -33,6 +33,7 @@ app.get('/route/:agency_id?', routes.index);
 app.get('/:agency_id?', routes.index);
 app.get('/route/:agency_id/:route_id', routes.route);
 app.get('/route/:agency_id/:route_id/:stop_id', routes.stop);
+app.get('/nearbyStops/:lat/:lon', routes.nearbyStops);
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
